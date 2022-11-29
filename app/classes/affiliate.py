@@ -31,7 +31,7 @@ class Affiliate_Orders(db.Model):
     escrow = db.Column(db.TEXT)
     item_id = db.Column(db.INTEGER)
     string_auction_id = db.Column(db.TEXT)
-    string_node_id = db.Column(db.TEXT)
+    node = db.Column(db.TEXT)
     image_one = db.Column(db.TEXT)
     quantity = db.Column(db.INTEGER)
     request_cancel = db.Column(db.INTEGER)

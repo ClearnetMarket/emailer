@@ -10,7 +10,7 @@ class Item_ItemtoDelete(db.Model):
     itemid = db.Column(db.Integer)
 
 
-class Item_CheckoutShoppingCart(db.Model):
+class Checkout_CheckoutShoppingCart(db.Model):
     __tablename__ = 'shoppingcart'
     __bind_key__ = 'clearnet'
     __table_args__ = {"schema": "public", 'extend_existing': True}
@@ -24,7 +24,7 @@ class Item_CheckoutShoppingCart(db.Model):
     title_of_item = db.Column(db.TEXT)
     price_of_item = db.Column(db.DECIMAL(20, 2))
     string_auction_id = db.Column(db.TEXT)
-    string_node_id = db.Column(db.TEXT)
+    node = db.Column(db.TEXT)
     image_of_item = db.Column(db.TEXT)
     quantity_of_item = db.Column(db.INTEGER)
     return_policy = db.Column(db.TEXT)
@@ -56,7 +56,7 @@ class Item_CheckoutShoppingCart(db.Model):
     final_price = db.Column(db.DECIMAL(20, 8))
 
 
-class Item_ShoppingCartTotal(db.Model):
+class Checkout_ShoppingCartTotal(db.Model):
     __tablename__ = 'shoppingcarttotal'
     __bind_key__ = 'clearnet'
     __table_args__ = {"schema": "public", 'extend_existing': True}
@@ -93,7 +93,7 @@ class Item_MarketItem(db.Model):
     vendor_name = db.Column(db.String(140))
     vendor_id = db.Column(db.INTEGER)
     string_auction_id = db.Column(db.String(40))
-    string_node_id = db.Column(db.String(40))
+    node = db.Column(db.String(40))
 
     origin_country = db.Column(db.INTEGER)
     destination_country_one = db.Column(db.INTEGER)
